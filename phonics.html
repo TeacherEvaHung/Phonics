@@ -1,0 +1,683 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>及人小學 自然發音互動表格 (大禮物🎁)</title>
+
+<script>
+    let lastTextElement = null;
+    let lastOriginalText = '';
+    let lastOriginalStyle = '';
+
+    const sharedAudio = new Audio();
+
+    function stopAllAndPlay(src, textEl, originalText, word, originalStyle) {
+        sharedAudio.pause();
+        sharedAudio.currentTime = 0;
+
+        if (lastTextElement && lastTextElement !== textEl) {
+            lastTextElement.textContent = lastOriginalText;
+            lastTextElement.setAttribute('style', lastOriginalStyle);
+        }
+
+        lastTextElement = textEl;
+        lastOriginalText = originalText;
+        lastOriginalStyle = originalStyle;
+
+        textEl.textContent = word;
+        textEl.style.fontWeight = 'bold';
+        textEl.style.fontSize = '36pt';
+
+        sharedAudio.src = src;
+        sharedAudio.load();
+        sharedAudio.play().catch(e => {
+            console.error('Audio play error:', e);
+            textEl.textContent = originalText;
+            textEl.setAttribute('style', originalStyle);
+        });
+
+        sharedAudio.onended = function () {
+            textEl.textContent = originalText;
+            textEl.setAttribute('style', originalStyle);
+        };
+
+        sharedAudio.onerror = function () {
+            textEl.textContent = originalText;
+            textEl.setAttribute('style', originalStyle);
+        };
+    }
+</script>
+
+</head>
+<body style="font-family:sans-serif; padding:40px; text-align:center;">
+<h1>🔠及人小學 自然發音互動表格🎁</h1>
+<p>點拼音會播放並顯示單字，會自動恢復前一個</p>
+<table style="border-collapse: collapse; margin:auto; font-size:20px;">
+<tr>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/cake.mp3', this.querySelector('span'), 'a_e', 'cake', '')" style="color:#1a73e8; text-decoration:none;" title="cake">
+<span style="">a_e</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/these.mp3', this.querySelector('span'), 'e_e', 'these', '')" style="color:#1a73e8; text-decoration:none;" title="these">
+<span style="">e_e</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/kite.mp3', this.querySelector('span'), 'i_e', 'kite', '')" style="color:#1a73e8; text-decoration:none;" title="kite">
+<span style="">i_e</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/home.mp3', this.querySelector('span'), 'o_e', 'home', '')" style="color:#1a73e8; text-decoration:none;" title="home">
+<span style="">o_e</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/cute.ruler.mp3', this.querySelector('span'), 'u_e', 'cute.ruler', '')" style="color:#1a73e8; text-decoration:none;" title="cute.ruler">
+<span style="">u_e</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/fruit.mp3', this.querySelector('span'), 'ui', 'fruit', '')" style="color:#1a73e8; text-decoration:none;" title="fruit">
+<span style="">ui</span>
+</a>
+<br/>
+</td>
+</tr>
+<tr>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/rain.mp3', this.querySelector('span'), 'ai', 'rain', '')" style="color:#1a73e8; text-decoration:none;" title="rain">
+<span style="">ai</span>
+</a>
+<br/>
+</td>
+<td style="width:69px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/eat.mp3', this.querySelector('span'), 'ea_0', 'eat', '')" style="color:#1a73e8; text-decoration:none;" title="eat">
+<span style="">ea</span>
+</a>
+<br/>
+</td>
+<td style="width:69px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/head.mp3', this.querySelector('span'), 'ea_1', 'head', '')" style="color:#1a73e8; text-decoration:none;" title="head">
+<span style="font-weight:bold;text-decoration:underline;">ea</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/pie.mp3', this.querySelector('span'), 'ie', 'pie', '')" style="color:#1a73e8; text-decoration:none;" title="pie">
+<span style="">ie</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/goat.mp3', this.querySelector('span'), 'oa', 'goat', '')" style="color:#1a73e8; text-decoration:none;" title="goat">
+<span style="">oa</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/bl-ue.mp3', this.querySelector('span'), 'ue', 'bl-ue', '')" style="color:#1a73e8; text-decoration:none;" title="bl-ue">
+<span style="">ue</span>
+</a>
+<br/>
+</td>
+</tr>
+<tr>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/pl-ay.mp3', this.querySelector('span'), 'ay', 'pl-ay', '')" style="color:#1a73e8; text-decoration:none;" title="pl-ay">
+<span style="">ay</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/gr-een.mp3', this.querySelector('span'), 'ee', 'gr-een', '')" style="color:#1a73e8; text-decoration:none;" title="gr-een">
+<span style="">ee</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/light.mp3', this.querySelector('span'), 'igh', 'light', '')" style="color:#1a73e8; text-decoration:none;" title="light">
+<span style="">igh</span>
+</a>
+<br/>
+</td>
+<td style="width:69px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/yellow.mp3', this.querySelector('span'), 'ow_0', 'yellow', '')" style="color:#1a73e8; text-decoration:none;" title="yellow">
+<span style="">ow</span>
+</a>
+<br/>
+</td>
+<td style="width:69px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/cow.mp3', this.querySelector('span'), 'ow_1', 'cow', '')" style="color:#1a73e8; text-decoration:none;" title="cow">
+<span style="text-decoration:underline;">ow</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/house.mp3', this.querySelector('span'), 'ou', 'house', '')" style="color:#1a73e8; text-decoration:none;" title="house">
+<span style="text-decoration:underline;">ou</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/screw.mp3', this.querySelector('span'), 'ew', 'screw', '')" style="color:#1a73e8; text-decoration:none;" title="screw">
+<span style="">ew</span>
+</a>
+<br/>
+</td>
+</tr>
+<tr>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/money.mp3', this.querySelector('span'), 'ey', 'money', '')" style="color:#1a73e8; text-decoration:none;" title="money">
+<span style="">ey</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/fl-y.mp3', this.querySelector('span'), '1)', 'fl-y', '')" style="color:#1a73e8; text-decoration:none;" title="fl-y">
+<span style="">-y (1)</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/happy.mp3', this.querySelector('span'), '-y', 'happy', '')" style="color:#1a73e8; text-decoration:none;" title="happy">
+<span style="">-y</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/sch-ool.mp3', this.querySelector('span'), 'oo長', 'sch-ool', '')" style="color:#1a73e8; text-decoration:none;" title="sch-ool">
+<span style="">oo長</span>
+</a>
+<br/>
+</td>
+</tr>
+<tr>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/book.mp3', this.querySelector('span'), 'oo短', 'book', '')" style="color:#1a73e8; text-decoration:none;" title="book">
+<span style="">oo短</span>
+</a>
+<br/>
+</td>
+</tr>
+<tr>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/walk.mp3', this.querySelector('span'), 'al', 'walk', '')" style="color:#1a73e8; text-decoration:none;" title="walk">
+<span style="">al</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/star.mp3', this.querySelector('span'), 'ar', 'star', '')" style="color:#1a73e8; text-decoration:none;" title="star">
+<span style="font-style:italic;">ar</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/hair.mp3', this.querySelector('span'), 'air', 'hair', '')" style="color:#1a73e8; text-decoration:none;" title="hair">
+<span style="">air</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/juice.mp3', this.querySelector('span'), 'ce', 'juice', '')" style="color:#1a73e8; text-decoration:none;" title="juice">
+<span style="">ce</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+</tr>
+<tr>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/sauce.mp3', this.querySelector('span'), 'au', 'sauce', '')" style="color:#1a73e8; text-decoration:none;" title="sauce">
+<span style="">au</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/short.mp3', this.querySelector('span'), 'or', 'short', '')" style="color:#1a73e8; text-decoration:none;" title="short">
+<span style="font-style:italic;">or</span>
+</a>
+<br/>
+</td>
+<td style="width:69px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/bear.mp3', this.querySelector('span'), 'ear_0', 'bear', '')" style="color:#1a73e8; text-decoration:none;" title="bear">
+<span style="">ear</span>
+</a>
+<br/>
+</td>
+<td style="width:69px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/dear.mp3', this.querySelector('span'), 'ear_1', 'dear', '')" style="color:#1a73e8; text-decoration:none;" title="dear">
+<span style="text-decoration:underline;">ear</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/city.mp3', this.querySelector('span'), 'ci', 'city', '')" style="color:#1a73e8; text-decoration:none;" title="city">
+<span style="">ci</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/circle.mp3', this.querySelector('span'), '-le', 'circle', '')" style="color:#1a73e8; text-decoration:none;" title="circle">
+<span style="">-le</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/sausage.mp3', this.querySelector('span'), '-age', 'sausage', '')" style="color:#1a73e8; text-decoration:none;" title="sausage">
+<span style="">-age</span>
+</a>
+<br/>
+</td>
+</tr>
+<tr>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/yawn.mp3', this.querySelector('span'), 'aw', 'yawn', '')" style="color:#1a73e8; text-decoration:none;" title="yawn">
+<span style="">aw</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/water.mp3', this.querySelector('span'), 'er', 'water', '')" style="color:#1a73e8; text-decoration:none;" title="water">
+<span style="font-style:italic;text-decoration:underline;">er</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/bicycle.mp3', this.querySelector('span'), 'cy', 'bicycle', '')" style="color:#1a73e8; text-decoration:none;" title="bicycle">
+<span style="">cy</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/schwa en.mp3', this.querySelector('span'), '-_n', 'schwa en', '')" style="color:#1a73e8; text-decoration:none;" title="schwa en">
+<span style="">-_n</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/station.mp3', this.querySelector('span'), '-tion', 'station', '')" style="color:#1a73e8; text-decoration:none;" title="station">
+<span style="">-tion</span>
+</a>
+<br/>
+</td>
+</tr>
+<tr>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/bird.mp3', this.querySelector('span'), 'ir', 'bird', '')" style="color:#1a73e8; text-decoration:none;" title="bird">
+<span style="font-style:italic;text-decoration:underline;">ir</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/2.mp3', this.querySelector('span'), '-ar.or.er', '2', '')" style="color:#1a73e8; text-decoration:none;" title="2">
+<span style="">-ar.or.er</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/ourism.mp3', this.querySelector('span'), '-ism', 'ourism', '')" style="color:#1a73e8; text-decoration:none;" title="ourism">
+<span style="">-ism</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/picture.mp3', this.querySelector('span'), '-ture', 'picture', '')" style="color:#1a73e8; text-decoration:none;" title="picture">
+<span style="">-ture</span>
+</a>
+<br/>
+</td>
+</tr>
+<tr>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/coin.mp3', this.querySelector('span'), 'oi', 'coin', '')" style="color:#1a73e8; text-decoration:none;" title="coin">
+<span style="">oi</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/nurse.mp3', this.querySelector('span'), 'ur', 'nurse', '')" style="color:#1a73e8; text-decoration:none;" title="nurse">
+<span style="font-style:italic;text-decoration:underline;">ur</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/22.mp3', this.querySelector('span'), '-er.ir.ur-', '22', '')" style="color:#1a73e8; text-decoration:none;" title="22">
+<span style="">-er.ir.ur-</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/orange.mp3', this.querySelector('span'), 'ge', 'orange', '')" style="color:#1a73e8; text-decoration:none;" title="orange">
+<span style="">ge</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+</tr>
+<tr>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/boy.mp3', this.querySelector('span'), 'oy', 'boy', '')" style="color:#1a73e8; text-decoration:none;" title="boy">
+<span style="">oy</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/giraffe.mp3', this.querySelector('span'), 'gi', 'giraffe', '')" style="color:#1a73e8; text-decoration:none;" title="giraffe">
+<span style="">gi</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/twenty.mp3', this.querySelector('span'), 'tw', 'twenty', '')" style="color:#1a73e8; text-decoration:none;" title="twenty">
+<span style="">tw</span>
+</a>
+<br/>
+</td>
+</tr>
+<tr>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/gym.mp3', this.querySelector('span'), 'gy', 'gym', '')" style="color:#1a73e8; text-decoration:none;" title="gym">
+<span style="">gy</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/clo-ck.mp3', this.querySelector('span'), 'ck', 'clo-ck', '')" style="color:#1a73e8; text-decoration:none;" title="clo-ck">
+<span style="">ck</span>
+</a>
+<br/>
+</td>
+</tr>
+<tr>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/brother.mp3', this.querySelector('span'), 'br', 'brother', '')" style="color:#1a73e8; text-decoration:none;" title="brother">
+<span style="">br</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/blue.mp3', this.querySelector('span'), 'bl', 'blue', '')" style="color:#1a73e8; text-decoration:none;" title="blue">
+<span style="">bl</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/small.mp3', this.querySelector('span'), 'sm', 'small', '')" style="color:#1a73e8; text-decoration:none;" title="small">
+<span style="">sm</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/phone.mp3', this.querySelector('span'), 'ph', 'phone', '')" style="color:#1a73e8; text-decoration:none;" title="phone">
+<span style="">ph</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/quiz.mp3', this.querySelector('span'), 'qu', 'quiz', '')" style="color:#1a73e8; text-decoration:none;" title="quiz">
+<span style="">qu</span>
+</a>
+<br/>
+</td>
+</tr>
+<tr>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/cry.mp3', this.querySelector('span'), 'cr', 'cry', '')" style="color:#1a73e8; text-decoration:none;" title="cry">
+<span style="">cr</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/clock.mp3', this.querySelector('span'), 'cl', 'clock', '')" style="color:#1a73e8; text-decoration:none;" title="clock">
+<span style="">cl</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/snow.mp3', this.querySelector('span'), 'sn', 'snow', '')" style="color:#1a73e8; text-decoration:none;" title="snow">
+<span style="">sn</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/treasure.mp3', this.querySelector('span'), '-sure', 'treasure', '')" style="color:#1a73e8; text-decoration:none;" title="treasure">
+<span style="">-sure</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/fish.mp3', this.querySelector('span'), 'sh', 'fish', '')" style="color:#1a73e8; text-decoration:none;" title="fish">
+<span style="">sh</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/sing.mp3', this.querySelector('span'), 'ng', 'sing', '')" style="color:#1a73e8; text-decoration:none;" title="sing">
+<span style="">ng</span>
+</a>
+<br/>
+</td>
+</tr>
+<tr>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/draw.mp3', this.querySelector('span'), '*dr', 'draw', '')" style="color:#1a73e8; text-decoration:none;" title="draw">
+<span style="">*dr</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/swim.mp3', this.querySelector('span'), 'sw', 'swim', '')" style="color:#1a73e8; text-decoration:none;" title="swim">
+<span style="">sw</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/chicken.mp3', this.querySelector('span'), 'ch', 'chicken', '')" style="color:#1a73e8; text-decoration:none;" title="chicken">
+<span style="">ch</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/sink.mp3', this.querySelector('span'), 'nk', 'sink', '')" style="color:#1a73e8; text-decoration:none;" title="sink">
+<span style="">nk</span>
+</a>
+<br/>
+</td>
+</tr>
+<tr>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/frog.mp3', this.querySelector('span'), 'fr', 'frog', '')" style="color:#1a73e8; text-decoration:none;" title="frog">
+<span style="">fr</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/fly.mp3', this.querySelector('span'), 'fl', 'fly', '')" style="color:#1a73e8; text-decoration:none;" title="fly">
+<span style="">fl</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/school.mp3', this.querySelector('span'), '*sc', 'school', '')" style="color:#1a73e8; text-decoration:none;" title="school">
+<span style="">*sc</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/screw.mp3', this.querySelector('span'), '*scr', 'screw', '')" style="color:#1a73e8; text-decoration:none;" title="screw">
+<span style="">*scr</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/kitchen.mp3', this.querySelector('span'), 'tch', 'kitchen', '')" style="color:#1a73e8; text-decoration:none;" title="kitchen">
+<span style="">tch</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+</tr>
+<tr>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/green.mp3', this.querySelector('span'), 'gr', 'green', '')" style="color:#1a73e8; text-decoration:none;" title="green">
+<span style="">gr</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/glue.mp3', this.querySelector('span'), 'gl', 'glue', '')" style="color:#1a73e8; text-decoration:none;" title="glue">
+<span style="">gl</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/sky.mp3', this.querySelector('span'), '*sk', 'sky', '')" style="color:#1a73e8; text-decoration:none;" title="sky">
+<span style="">*sk</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/this.mp3', this.querySelector('span'), 'th有', 'this', '')" style="color:#1a73e8; text-decoration:none;" title="this">
+<span style="">th有</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/write.mp3', this.querySelector('span'), 'wr', 'write', '')" style="color:#1a73e8; text-decoration:none;" title="write">
+<span style="">wr</span>
+</a>
+<br/>
+</td>
+</tr>
+<tr>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/prince.mp3', this.querySelector('span'), 'pr', 'prince', '')" style="color:#1a73e8; text-decoration:none;" title="prince">
+<span style="">pr</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/play.mp3', this.querySelector('span'), 'pl', 'play', '')" style="color:#1a73e8; text-decoration:none;" title="play">
+<span style="">pl</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/star.mp3', this.querySelector('span'), '*st', 'star', '')" style="color:#1a73e8; text-decoration:none;" title="star">
+<span style="">*st</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/strong.mp3', this.querySelector('span'), '*str', 'strong', '')" style="color:#1a73e8; text-decoration:none;" title="strong">
+<span style="">*str</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/bath.mp3', this.querySelector('span'), 'th無', 'bath', '')" style="color:#1a73e8; text-decoration:none;" title="bath">
+<span style="">th無</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/knee.mp3', this.querySelector('span'), 'kn', 'knee', '')" style="color:#1a73e8; text-decoration:none;" title="knee">
+<span style="">kn</span>
+</a>
+<br/>
+</td>
+</tr>
+<tr>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/tree.mp3', this.querySelector('span'), '*tr', 'tree', '')" style="color:#1a73e8; text-decoration:none;" title="tree">
+<span style="">*tr</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/spider.mp3', this.querySelector('span'), '*sp', 'spider', '')" style="color:#1a73e8; text-decoration:none;" title="spider">
+<span style="">*sp</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/spring.mp3', this.querySelector('span'), '*spr', 'spring', '')" style="color:#1a73e8; text-decoration:none;" title="spring">
+<span style="">*spr</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/what.mp3', this.querySelector('span'), 'wh', 'what', '')" style="color:#1a73e8; text-decoration:none;" title="what">
+<span style="">wh</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/climb.mp3', this.querySelector('span'), 'mb', 'climb', '')" style="color:#1a73e8; text-decoration:none;" title="climb">
+<span style="">mb</span>
+</a>
+<br/>
+</td>
+</tr>
+<tr>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/sleep.mp3', this.querySelector('span'), 'sl', 'sleep', '')" style="color:#1a73e8; text-decoration:none;" title="sleep">
+<span style="">sl</span>
+</a>
+<br/>
+</td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td colspan="2" style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/splash.mp3', this.querySelector('span'), '*spl', 'splash', '')" style="color:#1a73e8; text-decoration:none;" title="splash">
+<span style="">*spl</span>
+</a>
+<br/>
+</td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;"> </td>
+<td style="width:138px; height:50px; text-align:center; vertical-align:middle; border:1px solid transparent;">
+<a href="javascript:void(0);" onclick="stopAllAndPlay('phonics pattern/gnaw.mp3', this.querySelector('span'), 'gn', 'gnaw', '')" style="color:#1a73e8; text-decoration:none;" title="gnaw">
+<span style="">gn</span>
+</a>
+<br/>
+</td>
+</tr>
+</table>
+</body>
+</html>
