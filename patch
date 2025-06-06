@@ -1,0 +1,44 @@
+diff --git a//dev/null b/overlay_example.html
+index 0000000000000000000000000000000000000000..da42b14b320166711161a633d267473540861bb7 100644
+--- a//dev/null
++++ b/overlay_example.html
+@@ -0,0 +1,39 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++<meta charset="utf-8"/>
++<title>Overlay Example</title>
++<style>
++  /* container uses the background image */
++  #pdf-bg {
++    position: relative;
++    width: 1000px; /* adjust to your image width */
++    margin: 0 auto;
++    background-image: url('https://pub.cjps.ntpc.edu.tw/~eng123/phonics%20pattern/Phonics%202025%20Jun%206.jpg');
++    background-size: contain;
++    background-repeat: no-repeat;
++  }
++  .audio-btn {
++    position: absolute;
++    background: rgba(255,255,255,0.8);
++    border: 1px solid #ccc;
++    border-radius: 4px;
++    padding: 4px 8px;
++    cursor: pointer;
++  }
++</style>
++<script>
++  function playAudio(src) {
++    const audio = new Audio(src);
++    audio.play();
++  }
++</script>
++</head>
++<body>
++<div id="pdf-bg">
++  <!-- example button positions -->
++  <div class="audio-btn" style="top: 50px; left: 60px;" onclick="playAudio('phonics pattern/cake.mp3')">a_e</div>
++  <div class="audio-btn" style="top: 120px; left: 200px;" onclick="playAudio('phonics pattern/these.mp3')">e_e</div>
++</div>
++</body>
++</html>
